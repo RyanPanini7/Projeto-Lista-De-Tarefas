@@ -63,3 +63,41 @@ h2 {
     border-bottom: 1px solid #444;
     position: relative;
 }
+
+.hide{
+    display: none;
+}
+
+.task:hover .fa-trash {
+    display: block;
+}
+
+.fa.fa-check {
+    border-radius: 50%;
+    border: 1px solid #444;
+    padding: 7px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.fa.fa-check.done {
+    color: #0DD657;
+    border: 1px solid #0DD657
+}
+
+.fa.fa-check:hover, .fa.fa-trash:hover{
+    color: #ff7066;
+    border-color: #ff7066;
+}
+
+.fa.fa-trash{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+#empty-task{
+    text-align: center;
+}
