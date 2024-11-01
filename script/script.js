@@ -18,12 +18,21 @@ class Todo{
 
         // Adiciona evento as tasks
         this.addEvents();
+
+        this.checkTasks('add')
     }
     removeTask(task){
-        console.log('Deu certo!')
+        //achar elemento pai
+        let parentEl = task.parentElement;
+
+        //remover da lista
+        parentEl.remove();
+
+        this.checkTasks('remove')
     }
-    completeTask(task){
-        console.log('Top!')
+    completeTask(task){ 
+        //adicionar classe de done
+        task.classList.add('done')
     }
  
     addEvents() {
@@ -40,6 +49,21 @@ class Todo{
         doneBtn.addEventListener('click', function(){
             todo.completeTask(this);
         });
+    }
+    checkTasks(command){
+        let msg = document.querySelector('#empty-tasks')
+        //logica de add ou remove tasks
+        if(command === 'add' ) {
+            this.totalTasks += 1;
+        }else if(command === 'remove'){
+            this.totalTasks -= 1;
+        }
+
+        if(this.totalTasks == 1) {
+            msg.classList.remove('hide')
+        }else {
+            msg.classList.add('hide')
+        }
     }
 }
 
